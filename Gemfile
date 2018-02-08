@@ -1,5 +1,9 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'spree', github: "spree/spree", branch: 'master'
+branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
+gem "solidus", github: "solidusio/solidus", branch: branch
+
+gem 'pg'
+gem 'mysql2'
 
 gemspec
